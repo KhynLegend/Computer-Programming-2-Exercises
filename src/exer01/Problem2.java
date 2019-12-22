@@ -22,7 +22,9 @@ public class Problem2 {
             snum = sc.next();
         }
         
-        System.out.println(((fnum.equals("10") || snum.equals("10")) || (Integer.parseInt(fnum) + Integer.parseInt(snum) == 10)) ? "True" : "False");
+        System.out.println(
+                ((fnum.equals("10") || snum.equals("10")) || (Integer.parseInt(fnum) + Integer.parseInt(snum) == 10))
+                        ? "\u001B[32mTrue" : "\u001B[31mFalse");
         
     }
     

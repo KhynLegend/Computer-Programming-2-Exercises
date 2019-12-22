@@ -30,7 +30,7 @@ public class Problem1 {
 
     String check(String fnum, String snum) {
         
-        return fnum.charAt(fnum.length()-1) == snum.charAt(snum.length()-1) ? "True" : "False";
+        return fnum.charAt(fnum.length()-1) == snum.charAt(snum.length()-1) ? "\u001B[32mTrue" : "\u001B[31mFalse";
 
     }
 

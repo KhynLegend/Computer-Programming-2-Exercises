@@ -11,6 +11,7 @@ public class Problem3 {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
+        
         String numString[] = new String[3];
 
         while (!new Problem3().isNumeric(numString[0])) {
