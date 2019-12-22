@@ -44,7 +44,7 @@ public class Problem5 {
             }
             
             System.out.println("");
-            System.out.println(smallBricks + bigBricks == goalBricks ? "\u001B[32mTrue" : "\u001B[31m False");
+            System.out.println(smallBricks + bigBricks == goalBricks ? "\u001B[32mTrue" : "\u001B[31mFalse");
             
             sc.close();
             break;
@@ -56,7 +56,7 @@ public class Problem5 {
         try {
             Integer.parseInt(num);
             return true;
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return false;
         }
     }

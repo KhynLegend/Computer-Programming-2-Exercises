@@ -49,7 +49,7 @@ public class Problem3 {
         try {
             Integer.parseInt(num);
             return true;
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return false;
         }
     }

@@ -38,7 +38,7 @@ public class Problem1 {
         try {
             Integer.parseInt(num);
             return true;
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return false;
         }
     }
