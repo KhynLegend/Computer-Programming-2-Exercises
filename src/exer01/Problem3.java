@@ -12,40 +12,47 @@ public class Problem3 {
         
         Scanner sc = new Scanner(System.in);
         
-        String numString[] = new String[3];
-
-        while (!new Problem3().isNumeric(numString[0])) {
-            System.out.print("Enter first number: ");
-            numString[0] = sc.nextLine();
+        while(true)
+        {
+            int smallBricks = 0, bigBricks = 0, goalBricks = 0; 
+            
+            System.out.print("Enter number of small bricks: ");
+            String temp = sc.next();
+            if(isNumeric(temp))
+                smallBricks = Integer.parseInt(temp);
+            else{
+                System.err.println("Input a number! Restarting...\n");
+                continue;
+            }
+            
+            System.out.print("Enter number of big bricks: ");
+            temp = sc.next();
+            if(isNumeric(temp))
+                bigBricks = Integer.parseInt(temp) * 5;
+            else{
+                System.err.println("Input a number! Restarting...\n");
+                continue;
+            }
+            
+            System.out.print("Enter length of brick to make (goal): ");
+            temp = sc.next();
+            if(isNumeric(temp))
+                goalBricks = Integer.parseInt(temp);
+            else{
+                System.err.println("Input a number! Restarting...\n");
+                continue;
+            }
+            
+            System.out.println("");
+            System.out.println(smallBricks + bigBricks == goalBricks ? "\u001B[32mTrue" : "\u001B[31mFalse");
+            
+            sc.close();
+            break;
         }
-
-        while (!new Problem3().isNumeric(numString[1])) {
-            System.out.print("Enter second number: ");
-            numString[1] = sc.nextLine();
-        }
-        
-        while (!new Problem3().isNumeric(numString[2])) {
-            System.out.print("Enter second number: ");
-            numString[2] = sc.nextLine();
-        }
-        
-        int a = Integer.parseInt(numString[0]);
-        int b = Integer.parseInt(numString[1]);
-        int c = Integer.parseInt(numString[2]);
-        
-        System.out.print("\nCheck second number? (true/false): ");
-        boolean response = sc.nextBoolean();
-        
-        System.out.println();
-        
-        if(response)
-            System.out.println(c > b);
-        else
-            System.out.println(b > a && c > b);
         
     }
     
-    boolean isNumeric(String num) {
+    static boolean isNumeric(String num) {
         try {
             Integer.parseInt(num);
             return true;
