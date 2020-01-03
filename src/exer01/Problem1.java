@@ -1,3 +1,4 @@
+
 package exer01;
 
 import java.util.Scanner;
@@ -8,32 +9,39 @@ import java.util.Scanner;
 public class Problem1 {
 
     public static void main(String[] args) {
-
+        
         Scanner sc = new Scanner(System.in);
-        String fnum = "", snum = "";
+        
+        String numString[] = new String[3];
 
-        while (!new Problem1().isNumeric(fnum)) {
+        while (!new Problem1().isNumeric(numString[0])) {
             System.out.print("Enter first number: ");
-            fnum = sc.nextLine();
+            numString[0] = sc.nextLine();
         }
 
-        while (!new Problem1().isNumeric(snum)) {
+        while (!new Problem1().isNumeric(numString[1])) {
             System.out.print("Enter second number: ");
-            snum = sc.nextLine();
+            numString[1] = sc.nextLine();
         }
         
-        System.out.println(new Problem1().check(fnum, snum));
-
-        sc.close();
-
-    }
-
-    String check(String fnum, String snum) {
+        while (!new Problem1().isNumeric(numString[2])) {
+            System.out.print("Enter second number: ");
+            numString[2] = sc.nextLine();
+        }
         
-        return fnum.charAt(fnum.length()-1) == snum.charAt(snum.length()-1) ? "\u001B[32mTrue" : "\u001B[31mFalse";
-
+        int a = Integer.parseInt(numString[0]);
+        int b = Integer.parseInt(numString[1]);
+        int c = Integer.parseInt(numString[2]);
+        
+        System.out.print("\nCheck second number? (true/false): ");
+        boolean response = sc.nextBoolean();
+        
+        System.out.println();
+        
+        System.out.printf("%b\n", response ? c > b : (b > a && c > b));
+        
     }
-
+    
     boolean isNumeric(String num) {
         try {
             Integer.parseInt(num);
@@ -42,5 +50,5 @@ public class Problem1 {
             return false;
         }
     }
-
+    
 }
